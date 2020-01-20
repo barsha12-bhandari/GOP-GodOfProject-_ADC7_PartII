@@ -24,5 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-urlpatterns += [path('',include('viewDogs.urls'))] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [path('',include('viewDogs.urls')),
+                path('',include('search.urls'))
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
