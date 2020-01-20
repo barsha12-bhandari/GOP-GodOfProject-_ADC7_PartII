@@ -1,0 +1,31 @@
+{% extends 'manageDog/base.html' %}
+<!-- start of main-page -->
+{% block main-page %}
+<div class="viewproduct">
+    {% for dog in dogs %}
+    <div class="card" style="width: 18rem; margin: 10px;">
+        <img src="{{dog.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{dog.name}}</h5>
+
+            <p class="card-text"><b>NRs:{{dog.price}}</b></b>
+            </p>
+            <a href="/dashboard/update/{{dog.id}}" class="btn btn-success">Update details</a>
+            <a href="/dashboard/delete/{{dog.id}}" class="btn btn-danger">Delete this</a>
+        </div>
+    </div>
+    {% empty %} There are no products availble. {% endfor %}
+</div>
+<br>
+<!-- styling -->
+<style>
+    .viewproduct {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: auto;
+        align-content: space-between;
+        justify-content: center;
+    }
+</style>
+{% endblock %}

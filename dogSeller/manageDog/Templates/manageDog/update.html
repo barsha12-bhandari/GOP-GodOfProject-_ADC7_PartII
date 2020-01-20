@@ -1,0 +1,49 @@
+{% extends 'manageDog/base.html' %} {% block main-page %}
+<div class="form-container" style="margin: 50px 100px;">
+    <form action="/dashboard/update/save/" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Dog Name</label>
+                <input type="text" name="Name" class="form-control" value={{product.name}}>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Dog Breed</label>
+                <input type="text" name="Breed" class="form-control" value={{product.breed}}>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Price</label>
+                <input type="text" name="Price" class="form-control" value={{product.price}}>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Weight</label>
+                <input type="text" name="Weight" class="form-control" value={{product.weight}}>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Product Image</label>
+                <input type="file" accept="image/" name="Image" class="form-control" value={{product.image.url}}>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Stock no</label>
+                <input type="text" name="Stock" class="form-control" value={{product.stockNo}}>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Description</label>
+                <textarea name="Description" class="form-control">{{product.description}}</textarea>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">ID</label>
+                <textarea name="dogID" class="form-control">{{product.id}}</textarea>
+            </div>
+        </div>
+        <!-- <input name="id" value={{product.id}}> -->
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+{% endblock %}
