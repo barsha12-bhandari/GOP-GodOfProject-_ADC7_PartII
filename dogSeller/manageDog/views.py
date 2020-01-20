@@ -58,10 +58,11 @@ def updateSave(request):
 
     if request.method == 'POST' and request.FILES['Image']:
         dimage=request.FILES['Image']
-        fs = FileSystemStorage()
+        fs = FileSystemStorage(location='media/media/images/')
         filename = fs.save(dimage.name, dimage)
         file_url = fs.url(filename)
-        dogObj.image = file_url
+        # implementing my own logic to edit file url
+        dogObj.image = file_url.replace('/media','media/images')
 
     
     dogObj.name = dname
