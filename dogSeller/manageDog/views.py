@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from viewDogs.models import Dogs
 from django.http import HttpResponse
-
+from django.template import Template,context
 # Create your views here.
 def adminDashboard(request):
     return render(request,'manageDog/dash.html')
@@ -29,3 +29,7 @@ def saveDogs(request):
     dogObj.save()
 
     return HttpResponse("Dog details success fully saved")
+
+def updateDelete(response):
+    return render(request,'manageDog/edel.html')
+
