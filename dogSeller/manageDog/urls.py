@@ -8,6 +8,6 @@ urlpatterns = [
     path('add/save', saveDogs),
     path('edel/',updateDelete),
     path('update/<int:ID>', update),
-    path('update/save/', updateSave)
-    # path('viewAccessories/',seeAccessories),
+    path('update/save/', updateSave),
+    path('delete/<int:ID>',delete),
 ]

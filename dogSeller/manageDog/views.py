@@ -74,3 +74,10 @@ def updateSave(request):
     dogObj.save()
 
     return HttpResponse("Dog details successfully updated")    
+
+def delete(request,ID):
+    dog = Dogs.objects.get(id=ID)
+    dog.delete()
+    return HttpResponse("Dog details successfully deleted.")
+
+
