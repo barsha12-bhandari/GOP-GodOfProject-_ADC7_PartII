@@ -13,7 +13,4 @@ class Dogs(models.Model):
     def __str__(self):
         return (self.name)
     #abstract model which allows inheritance and the table is not created
-    class Meta:
-        abstract = True
-        # ordering = ["name","price","stockNo","releaseDate","specs","brand","image"]
 
