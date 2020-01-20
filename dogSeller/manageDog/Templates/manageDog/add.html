@@ -1,0 +1,44 @@
+{% extends 'manageDog/base.html' %} {% block main-page %}
+<div class="form-container" style="margin: 50px 100px;">
+    <form action="/dashboard/add/save" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Dog Name</label>
+                <input type="text" name="Name" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Dog Breed</label>
+                <input type="text" name="Breed" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Price</label>
+                <input type="text" name="Price" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Weight</label>
+                <input type="text" name="Weight" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Product Image</label>
+                <input type="file" accept="image/" name="Image" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Stock no</label>
+                <input type="text" name="Stock" class="form-control">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Description</label>
+                <textarea name="Description" class="form-control"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}

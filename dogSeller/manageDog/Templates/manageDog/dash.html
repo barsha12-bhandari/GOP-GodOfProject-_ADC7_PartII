@@ -1,0 +1,26 @@
+{% extends 'manageDog/base.html' %}
+<!-- start of main-page -->
+{% block main-page %}
+<div class="buttons-dash">
+    <a href="add/">Add Dogs</a>
+    <a href="edel/">Delete/Edit Dogs</a>
+</div>
+<style>
+    .buttons-dash {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .buttons-dash a {
+        height: 70px;
+        margin: 50px;
+        background-color: rgb(255, 10, 10);
+        font-size: 50px;
+        text-align: center;
+        color: antiquewhite;
+    }
+</style>
+
+
+{% endblock %}
