@@ -6,6 +6,8 @@ urlpatterns = [
     path('', adminDashboard),
     path('add/',addDogForm),
     path('add/save', saveDogs),
-    # path('viewLaptops/', seeLaptops),
-    # path('viewAccessories/',seeAccessories),
+    path('edel/',updateDelete),
+    path('update/<int:ID>', update),
+    path('update/save/', updateSave),
+    path('delete/<int:ID>',delete),
 ]
