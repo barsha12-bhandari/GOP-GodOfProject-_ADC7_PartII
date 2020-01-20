@@ -2,13 +2,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Template,context
+from viewDogs.models import Dogs
 # Create your views here.
 
 # homepage
 def homepage(request):
-    # phones = Phones.objects.all()
-    # accessories = Accessories.objects.all()
-    # print(phones)
-    # print(accessories)
-    # params = {'products':phones}
-    return render(request,'viewDogs/base.html')
+    ourdogs = Dogs.objects.all()
+    params = {'dogs':ourdogs}
+    return render(request,'viewDogs/home.html',params)
+
+
+def viewProductDetails(request,ID):
+    product = Dogs.objects.get(id=ID)
+    context_varible = {'product':product}
+    return render(request,'viewDogs/view.html',context_varible)

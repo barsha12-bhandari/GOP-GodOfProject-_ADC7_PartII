@@ -1,0 +1,117 @@
+{% extends 'viewDogs/base.html' %}
+<!-- title -->
+{% block title%}eshop{% endblock %}
+<!-- start of body -->
+{% block main-page %}
+
+<!-- <div class="card" style="width: 18rem; margin: 10px;">
+    <img src="{{product.image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text"><b>NRs:{{product.price}}</b></b>
+        </p>
+        <a href="#" class="btn btn-dark">View Product</a>
+    </div>
+</div> -->
+
+<!-- This page displays product  -->
+<div class="mainsection">
+    <div class="mainsection-top">
+        <div class="mainsection-top-image">
+            <img src="{{product.image.url}}" alt="...">
+        </div>
+        <div class="mainsection-top-price">
+            <h1>{{product.name}}</h1>
+            <h2>NRs:{{product.price}}</h2>
+            <a href="#" class="btn btn-dark">Add to Cart</a>
+        </div>
+    </div>
+    <!-- product specs display table -->
+    <div class="mainsection-bottom">
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>{{product.name}}</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>Nrs: {{product.price}}</td>
+            </tr>
+            <tr>
+                <td>Breed</td>
+                <td>{{product.breed}}</td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td>{{product.weight}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{product.description}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+</script>
+<style>
+    /* table styling */
+    
+    table {
+        width: 50%;
+    }
+    
+    table,
+    th,
+    td {
+        border: 1px solid rgb(238, 236, 236);
+    }
+    
+    th,
+    td {
+        padding: 5px;
+    }
+    
+    td:first-child {
+        font-weight: bold;
+        padding-right: 3em;
+    }
+    
+    .mainsection-top-price {
+        margin-left: 2em;
+        padding-top: 200px;
+    }
+    
+    .mainsection-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .mainsection-bottom {
+        display: flex;
+        justify-content: center;
+    }
+    /* Style buttons for download buttons */
+    
+    .download-btn {
+        background-color: DodgerBlue;
+        border: none;
+        color: white;
+        padding: 5px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+    /* Darker background on mouse-over */
+    
+    .download-btn:hover {
+        background-color: RoyalBlue;
+    }
+    
+    .download-container {
+        margin: 15px 0;
+        text-align: center;
+    }
+</style>
+{% endblock %}
