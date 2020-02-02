@@ -26,7 +26,8 @@ urlpatterns = [
 
 urlpatterns += [path('',include('viewDogs.urls')),
                 path('',include('search.urls')),
-                path('dashboard/',include('manageDog.urls'))
+                path('dashboard/',include('manageDog.urls')),
+                path('',include('UserManagement.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
