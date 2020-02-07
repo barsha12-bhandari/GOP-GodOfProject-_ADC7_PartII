@@ -22,12 +22,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/',include('restapi.urls')),
 ]
 
-urlpatterns += [path('',include('viewDogs.urls')),
+urlpatterns += [
+                path('',include('viewDogs.urls')),
                 path('',include('search.urls')),
                 path('dashboard/',include('manageDog.urls')),
-                path('',include('UserManagement.urls'))
-
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                path('',include('UserManagement.urls')),
+                
+                ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
