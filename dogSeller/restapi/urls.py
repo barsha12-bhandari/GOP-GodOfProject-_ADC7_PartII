@@ -3,9 +3,9 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('api/getDogDetails/<int:ID>',getDogDetails),
-    # path('getAllDogs/',getAllProducts),
-    # path('createUser/',createUser),
-    # path('updateDogPrice/',updateProductPrice),
-    # path('deleteDog/<int:ID>',deleteProduct),
+    path('getDogDetails/<int:ID>',getDogDetails),
+    path('getAllDogs/',getAllDogs),
+    path('createUser/',createUser),
+    path('updateDogPrice/',updateDogPrice),
+    path('deleteDog/<int:ID>',deleteDog),
 ]
