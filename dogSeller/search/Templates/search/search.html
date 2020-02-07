@@ -1,6 +1,6 @@
 {% extends 'search/base.html' %}
 <!-- title -->
-{% block title%}Dog Seller{% endblock %}
+{% block title%}DOGSELLER | Search results{% endblock %}
 <!-- start of body -->
 {% block main-page %}
 
@@ -19,17 +19,16 @@
             <a href="/view/{{dog.id}}" class="btn btn-dark">View details</a>
         </div>
     </div>
-    {% empty %} <p>There are no such products available.</p>
-    
+    {% empty %}
+    <p>There are no such products available.</p>
 
-    Your search - <b> {{query}} </b>- did not match any documents.
 
-     Suggestions:
-      <ul>
+    Your search - <b> {{query}} </b>- did not match any documents. Suggestions:
+    <ul>
         <li>Make sure that all words are spelled correctly.</li>
         <li> Try different keywords.</li>
         <li> Try more general keywords.</li>
-      </ul>
+    </ul>
     {% endfor %}
 </div>
 <br>

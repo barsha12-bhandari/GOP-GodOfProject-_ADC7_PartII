@@ -8,4 +8,6 @@ urlpatterns = [
     path('createUser/',createUser),
     path('updateDogPrice/',updateDogPrice),
     path('deleteDog/<int:ID>',deleteDog),
+    # pagination URL
+    path('pagination/<int:SIZE>/<int:PAGENO>',getPage),
 ]
