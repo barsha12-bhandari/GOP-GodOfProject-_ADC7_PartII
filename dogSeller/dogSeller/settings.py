@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'search',
     'manageDog',
     'UserManagement',
+    'cartAndOrder'
 ]
 
 MIDDLEWARE = [

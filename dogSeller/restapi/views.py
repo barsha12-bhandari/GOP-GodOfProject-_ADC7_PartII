@@ -104,3 +104,27 @@ def deleteDog(request,ID):
         return JsonResponse({
             "message":"Only Delete request available"
         })
+# ****************************** Pp Aa Gg Ii Nn Aa Tt Ii Oo Nn********************************************
+# Pagination with SIZE and PAGENO params => GET
+
+# http://127.0.0.1:8000/api/pagination/<int:SIZE>/<int:PAGENO>
+
+def getPage(request, SIZE, PAGENO):
+    if request.method == 'GET':
+        # determining start 
+        start = ((PAGENO -1)* SIZE)
+
+        # determining end
+        end = start + SIZE
+        print(start," End:",end)
+        dogs = Dogs.objects.all()[start:end]
+        list_of_dogs = list(dogs.values("name","price","id","breed","weight"))
+        dogDictionary = {
+            "dogs":list_of_dogs
+        }
+        return JsonResponse(dogDictionary)
+
+    else:
+        return JsonResponse({
+            "message":"Only get request available"
+        })
