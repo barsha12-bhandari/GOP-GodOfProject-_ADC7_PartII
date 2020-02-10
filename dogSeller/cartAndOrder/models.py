@@ -15,5 +15,5 @@ class Cart(models.Model):
     customer = models.ManyToManyField(User,blank=True)
     quantity = models.IntegerField()
     def __str__(self):
-        return self.id
+        return self.id    
 
