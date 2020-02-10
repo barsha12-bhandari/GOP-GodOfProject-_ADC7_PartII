@@ -14,3 +14,5 @@ class Dogs(models.Model):
         return (self.name)
     #abstract model which allows inheritance and the table is not created
 
+def is_in_stock(self):
+    return int(self.stockNo) > 0
