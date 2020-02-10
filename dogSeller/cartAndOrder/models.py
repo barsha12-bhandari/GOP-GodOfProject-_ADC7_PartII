@@ -17,8 +17,3 @@ class Cart(models.Model):
     def __str__(self):
         return self.id
 
-class Seller(models.Model):
-    Sellerid = models.ForeignKey
-    def __str__(self):
-        return self.id
-    
